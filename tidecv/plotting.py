@@ -205,5 +205,5 @@ class Plotter():
 			plt.show()
 			plt.close()
 		else:
-			cv2.imwrite(os.path.join(out_dir, f'{"Prediction_epoch_{epoch}"}_summary.png'), summary_im)
+			cv2.imwrite(os.path.join(out_dir, f'Prediction_epoch_{epoch}__summary.png'), summary_im)
 
