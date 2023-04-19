@@ -563,7 +563,7 @@ class TIDE:
 			
 			print()
 
-	def plot(self, out_dir:str=None):
+	def plot(self, out_dir:str=None, epoch:int=None):
 		"""
 		Plots a summary model for each run in this TIDE object.
 		Images will be outputted to out_dir, which will be created if it doesn't exist.

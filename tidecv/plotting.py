@@ -93,7 +93,7 @@ class Plotter():
 		return tmp_dir
 		
 	
-	def make_summary_plot(self, out_dir:str, errors:dict, model_name:str, rec_type:str, hbar_names:bool=False):
+	def make_summary_plot(self, out_dir:str, errors:dict, model_name:str, rec_type:str, hbar_names:bool=False, epoch:int=None):
 		"""Make a summary plot of the errors for a model, and save it to the figs folder.
 		
 		:param out_dir:    The output directory for the summary image. MUST EXIST.
@@ -129,7 +129,7 @@ class Plotter():
 			inner_text[i].set_fontsize(48)
 			inner_text[i].set_fontweight('bold')
 		ax.axis('equal')
-		plt.title(model_name, fontdict={'fontsize': 60, 'fontweight': 'bold'})
+		plt.title(f"Prediction_epoch_{epoch}", fontdict={'fontsize': 60, 'fontweight': 'bold'})
 		pie_path = os.path.join(tmp_dir, '{}_{}_pie.png'.format(model_name, rec_type))
 		plt.savefig(pie_path, bbox_inches='tight', dpi=low_dpi)
 		plt.close()
@@ -205,5 +205,5 @@ class Plotter():
 			plt.show()
 			plt.close()
 		else:
-			cv2.imwrite(os.path.join(out_dir, '{}_{}_summary.png'.format(model_name, rec_type)), summary_im)
+			cv2.imwrite(os.path.join(out_dir, f'{"Prediction_epoch_{epoch}"}_summary.png'), summary_im)
 
