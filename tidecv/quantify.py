@@ -587,7 +587,7 @@ class TIDE:
 
 		# Do the plotting now
 		for run_name, run in self.runs.items():
-			self.plotter.make_summary_plot(out_dir, errors, run_name, run.mode, hbar_names=True)
+			self.plotter.make_summary_plot(out_dir, errors, run_name, run.mode, hbar_names=True, epoch=epoch)
 
 
 
