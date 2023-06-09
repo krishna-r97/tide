@@ -147,7 +147,10 @@ class ClassedAPDataObject:
 
 	def get_mAP(self) -> float:
 		aps = [x.get_ap() for x in self.objs.values() if not x.is_empty()]
-		return sum(aps) / len(aps)
+		if len(aps) > 0:
+			return sum(aps) / len(aps)
+		else:
+			return 0.0
 
 	def get_gt_positives(self) -> dict:
 		return {k: v.num_gt_positives for k, v in self.objs.items()}
